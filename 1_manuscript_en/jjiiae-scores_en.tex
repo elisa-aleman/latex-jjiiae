@@ -148,7 +148,7 @@ The following method was experimentally used to measure the correlation of the r
 
 \subsubsection{Pearson correlation coefficient \(r\)}\label{correl_pearson}
 
-In order to measure the correlation of the sentiment ratio \(x\), obtained by dividing the number of sentences judged as positive included in each review \(i_P\) by the total number of sentences \(i_T\), to the score \(y\), one of the methods used was Pearson's correlation coefficient \(r\) (\ref{eq: pearson_r}). The formula is shown below. The value of the formula (\ref{eq: pos_neg_ratio}) is substituted into the formula (\ref{eq: pearson_r}). When calculating the negative rate, substitute the number of sentences judged to be negative \(i_N\) into the formula (\ref{eq: pos_neg_ratio}).
+In order to measure the correlation of the sentiment ratio \(x\), obtained by dividing the number of sentences judged as positive included in each review \(i_P\) by the total number of sentences \(i_T\), to the score \(y\), one of the methods used was Pearson's correlation coefficient \(r\) (\ref{eq:pearson_r}). The formula is shown below. The value of the formula (\ref{eq:pos_neg_ratio}) is substituted into the formula (\ref{eq:pearson_r}). When calculating the negative rate, substitute the number of sentences judged to be negative \(i_N\) into the formula (\ref{eq:pos_neg_ratio}).
 
 \begin{equation}\label{eq:pos_neg_ratio}
 x = \frac{i_P}{i_T}
@@ -161,7 +161,7 @@ r = \frac{{}\sum_{i=1}^{M} (x_i - \overline{x})(y_i - \overline{y})}
 
 \subsubsection{Spearman's rank correlation coefficient \(\rho\)}\label{correl_spearman}
 
-In order to measure the correlation of the sentiment ratio \(x\), obtained by dividing the number of sentences judged as positive included in each review \(i_P\) by the total number of sentences \(i_T\), to the score \(y\), since twe consider the score to be a ranked variable, we used Spearman's ranked correlation coefficient \(\rho\) (\ref{eq: spearman_rho}) which is also based on Pearson's correlation coefficient. The formula is shown below. Substitute the value of the formula (\ref{eq: pos_neg_ratio}) into the formula (\ref{eq: spearman_rho}).
+In order to measure the correlation of the sentiment ratio \(x\), obtained by dividing the number of sentences judged as positive included in each review \(i_P\) by the total number of sentences \(i_T\), to the score \(y\), since twe consider the score to be a ranked variable, we used Spearman's ranked correlation coefficient \(\rho\) (\ref{eq:spearman_rho}) which is also based on Pearson's correlation coefficient. The formula is shown below. Substitute the value of the formula (\ref{eq:pos_neg_ratio}) into the formula (\ref{eq:spearman_rho}).
 
 \begin{equation}\label{eq:spearman_rho}
 r_s = \rho_{rg_X,rg_Y} = \frac{cov(rg_X,rg_Y)}{\sigma_{rg_X} \sigma_{rg_Y}}
@@ -169,7 +169,7 @@ r_s = \rho_{rg_X,rg_Y} = \frac{cov(rg_X,rg_Y)}{\sigma_{rg_X} \sigma_{rg_Y}}
 
 \subsubsection{Kendal's rank correlation coefficient \(\tau\)}\label{correl_kendall}
 
-Like Spearman's rank correlation coefficient, Kendal's rank correlation coefficient is used to investigate the relationship between the values that represent rank. The formula (\ref{eq: kendall_tau}) is shown below. However, substitute the expression (\ref{eq: kendall_L}) and the expression (\ref{eq: kendall_K}) into the expression (\ref{eq: kendall_tau}). Substitute the expression (\ref{eq: pos_neg_ratio}) for each.
+Like Spearman's rank correlation coefficient, Kendal's rank correlation coefficient is used to investigate the relationship between the values that represent rank. The formula (\ref{eq:kendall_tau}) is shown below. However, substitute the expression (\ref{eq:kendall_L}) and the expression (\ref{eq:kendall_K}) into the expression (\ref{eq:kendall_tau}). Substitute the expression (\ref{eq:pos_neg_ratio}) for each.
 
 
 \begin{equation}\label{eq:kendall_tau}
@@ -186,7 +186,7 @@ K = \# \set[\Big]{\{i,j\} \in \binom{[n]}{2} \mid (x_i \lessgtr x_j, y_i \lessgt
 
 \subsubsection{MIC}\label{mic}
 
-Pearson's correlation coefficient can only extract linear relationships. On the other hand, there is MIC (Maximal Information Coefficient) as a method to analyze the relationship between two variables including non-linearity \cite[][]{Reshef2011}. It is an index for analyzing the relationship between variables including non-linearity based on the amount of mutual information, considering the two variables for which you want to analyze the relationship as random variables. Fig. \ref{fig: mic} shows several examples of comparing the coefficients of MIC and Pearson. Pearson's coefficient is a value from 0 to 1 in a linear relationship, and it is determined whether it is a positive value or a negative value depending on the direction of inclination. On the other hand, in the case of MIC, even if it is a non-linear relationship, it can express the correlation using the value from 0 to 1 as long as there is a relationship. Examples of this are shown in Fig.\ref{fig:mic}.
+Pearson's correlation coefficient can only extract linear relationships. On the other hand, there is MIC (Maximal Information Coefficient) as a method to analyze the relationship between two variables including non-linearity \cite[][]{Reshef2011}. It is an index for analyzing the relationship between variables including non-linearity based on the amount of mutual information, considering the two variables for which you want to analyze the relationship as random variables. Fig. \ref{fig:mic} shows several examples of comparing the coefficients of MIC and Pearson. Pearson's coefficient is a value from 0 to 1 in a linear relationship, and it is determined whether it is a positive value or a negative value depending on the direction of inclination. On the other hand, in the case of MIC, even if it is a non-linear relationship, it can express the correlation using the value from 0 to 1 as long as there is a relationship. Examples of this are shown in Fig.\ref{fig:mic}.
 
 The procedure for calculating MIC will be described. First, for the variables \(X\) and \(Y\) to be analyzed, after plotting the two variables on the coordinate space, the space is divided by \(a * b\) (Split the \(X\) direction into \(a\) parts, and the \(Y\) direction into \(b\) parts). Then, for each of the two variables, the cell existence probability can be calculated by dividing the number of sample points belonging to each cell by the total number of samples. That is, \(X\) and \(Y\) are regarded as random variables based on the existence probability in the cell. This makes it possible to calculate the Mutual Information for \(X\) and \(Y\).
 
