@@ -217,7 +217,7 @@ First, we collected 1,541,424 HTML files from May 2016 to September 2016 from \t
 
 In order to create training data, a sample of reviews was randomly extracted from all the data, divided into sentences by expressing satisfaction or dissatisfaction, tagging work of 159 sentences was performed manually. The entropy was calculated from the sentences that become the training data.
 
-After calculating the entropy for the training data, the features with the maximum \(F_1\) value were selected by evaluating \(\alpha\) from 1.0 to 3.75 with a step size of 0.25 in order to obtain its optimum value. After training the SVM, the keyword list was selected based on the \(\alpha\) which led to the maximum \(F_1\) value as a result of 5-Fold Cross Validation (\(k = 5\)) for the evaluation data. Furthermore, both lists were combined to create a new list, and 5-Fold Cross Validation was performed in the same manner. The evaluation results are shown in Table \ref{tab:kfold_performance}. The feature that combines both has the highest \(F_1\) value, and \(F_1\) classifies all data with an SVM with a high accuracy of 0.95. Positive keywords are, for example, "\begin{CJK}{UTF8}{min}热情\end{CJK}" and "\begin{CJK}{UTF8}{min}景色\end{CJK}" (indicating "friendly" and "(good) scenery" respectively), and in the case of Negative keywords, there was an example of "\begin{CJK}{UTF8}{min}价格\end{CJK}" or "price" (indicating dissatisfaction because it is high).
+After calculating the entropy for the training data, the features with the maximum \(F_1\) value were selected by evaluating \(\alpha\) from 1.0 to 3.75 with a step size of 0.25 in order to obtain its optimum value. After training the SVM, the keyword list was selected based on the \(\alpha\) which led to the maximum \(F_1\) value as a result of 5-Fold Cross Validation (\(k = 5\)) for the evaluation data. Furthermore, both lists were combined to create a new list, and 5-Fold Cross Validation was performed in the same manner. The evaluation results are shown in Table \ref{tab:ch3_kfold_performance}. The feature that combines both has the highest \(F_1\) value, and \(F_1\) classifies all data with an SVM with a high accuracy of 0.95. Positive keywords are, for example, ``\begin{CJK}{UTF8}{min}热情\end{CJK}'' and ``\begin{CJK}{UTF8}{min}景色\end{CJK}'' (indicating ``friendly'' and ``(good) scenery'' respectively), and in the case of Negative keywords, there was an example of ``\begin{CJK}{UTF8}{min}价格\end{CJK}'' or ``price'' (indicating dissatisfaction because it is high).
 
 % Please add the following required packages to your document preamble:
 % \usepackage[normalem]{ulem}
@@ -246,7 +246,7 @@ Negative ratio     & -0.149           & -0.122           & 0.0447
 \end{tabular}
 \end{table}
 
-After learning with the optimal model, sentiment analysis was performed on unknown data, and the above-mentioned "Positive ratio" and "Negative ratio" were calculated. Since these values are the ratio of sentences expressing satisfaction and sentences expressing dissatisfaction, they were treated as numerical coefficients expressing emotions in each sentence, and correlation analysis was performed.
+After learning with the optimal model, sentiment analysis was performed on unknown data, and the above-mentioned ``Positive ratio'' and ``Negative ratio'' were calculated. Since these values are the ratio of sentences expressing satisfaction and sentences expressing dissatisfaction, they were treated as numerical coefficients expressing emotions in each sentence, and correlation analysis was performed.
 
 \subsection{Correlation analysis}\label{res_correls}
 
@@ -267,7 +267,7 @@ In this study, we investigated the relationship between the results of sentiment
 
 \section*{Acknowledgements}\label{acknowledgements}
 
-We would like to thank Mr. Liangyuan Zhou and Ms. Eerdengqiqige for their support in creating teacher data in Chinese. In addition, this paper was supported by the "Japan Construction Information Center".
+We would like to thank Mr. Liangyuan Zhou and Ms. Eerdengqiqige for their support in creating teacher data in Chinese. In addition, this paper was supported by the ``Japan Construction Information Center''.
 
 \clearpage
 
